@@ -23,13 +23,10 @@ int countPairs2(int *arr, int len, int value) {
       int currentRight = arr[right];
       while (left < right && arr[left] == currentLeft) left++;
       while (left < right && arr[right] == currentRight) right--;
-    }
-    else if (sum < value) {
+    } else if (sum < value)
       left++;
-    }
-    else {
+    else
       right--;
-    }
   }
   return k;
 }
@@ -45,13 +42,10 @@ int countPairs3(int *arr, int len, int value) {
       if (arr[mid] == complement) {
         k++;
         break;
-      }
-      else if (arr[mid] < complement) {
+      } else if (arr[mid] < complement)
         left = mid + 1;
-      }
-      else {
+      else
         right = mid - 1;
-      }
     }
   }
   return k;
