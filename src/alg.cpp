@@ -35,14 +35,26 @@ int countPairs3(int *arr, int len, int value) {
     int right = len - 1;
     while (left <= right) {
       int mid = left + (right - left) / 2;
-      if (arr[mid] == complement) {
-        k++;
-        break;
-      } else if (arr[mid] < complement) {
+      if (arr[mid] >= complement) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    }
+    int f = left;
+    left = i + 1;
+    right = len - 1;
+    while (left <= right) {
+      int mid = left + (right - left) / 2;
+      if (arr[mid] <= complement) {
         left = mid + 1;
       } else {
         right = mid - 1;
       }
+    }
+    int s = right;
+    if (f <= s) {
+      k += s - f + 1;
     }
   }
   return k;
