@@ -25,8 +25,7 @@ int countPairs2(int *arr, int len, int value) {
       while (left < right && arr[right] == currentRight) right--;
     } else if (sum < value) {
       left++;
-    }
-    else {
+    } else {
       right--;
     }
   }
@@ -46,8 +45,7 @@ int countPairs3(int *arr, int len, int value) {
         break;
       } else if (arr[mid] < complement) {
         left = mid + 1;
-      }
-      else {
+      } else {
         right = mid - 1;
       }
     }
